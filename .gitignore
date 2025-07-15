@@ -1,0 +1,38 @@
+# dependencies
+/node_modules
+
+# builds
+/dist
+/build
+
+# env
+.env*
+!.env.example
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# system
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode
+.idea
+
+# typescript
+*.tsbuildinfo
+
+# vitest / coverage
+coverage/
+
+# Optional: lock files you don’t want (if using only pnpm)
+package-lock.json
+yarn.lock
+
+# local configs
+*.local.*
+*.secret.*
