@@ -11,10 +11,10 @@ import { store, persistor } from './redux/store';
 
 import { router } from './route/routes';
 import { ReactKeycloakProvider } from '@react-keycloak/web';
-import keycloak from './configs/keycloak';
+import { keycloak, initOptions } from './configs/keycloak';
 
 createRoot(document.getElementById('root')!).render(
-  <ReactKeycloakProvider authClient={keycloak}>
+  <ReactKeycloakProvider authClient={keycloak} initOptions={initOptions}>
     <StrictMode>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>

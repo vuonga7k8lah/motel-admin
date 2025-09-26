@@ -1,9 +1,17 @@
 import Keycloak from 'keycloak-js';
 
-const keycloak = new Keycloak({
+export const keycloak = new Keycloak({
   url: import.meta.env.VITE_KEYCLOAK_URL,
   realm: import.meta.env.VITE_KEYCLOAK_REALM,
   clientId: import.meta.env.VITE_KEYCLOAK_CLIENT_ID,
 });
 
-export default keycloak;
+export const initOptions = {
+  onLoad: 'check-sso', // silent session check
+  flow: 'standard', // Authorization Code Flow
+  pkceMethod: 'S256', // PKCE for security
+  silentCheckSsoRedirectUri: `${window.location.origin}/silent-check-sso.html`,
+  checkLoginIframe: true,
+  checkLoginIframeInterval: 30,
+  enableLogging: true,
+};
